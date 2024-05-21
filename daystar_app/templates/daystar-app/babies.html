@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" href="/static/images/2.svg">
+    <title>Babies</title>
+</head>
+<body>
+
+{% block content %}
+
+     <!-- Navigation bar -->
+     <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/dashboards" id="navbar__logo">DAYSTAR</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links" id="home-page">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/babies" class="navbar__links" id="babies-page">Babies</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/sitters" class="navbar__links" id="sitters-page">Sitters</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/payment" class="navbar__links" id="payment-page">Payment</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/dolls-shop" class="navbar__links" id="doll-shop">Doll Shop</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/checkin" class="navbar__links" id="doll-shop">Check In</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/accounts/login" class="button" id="login">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+    <script src="/static/javascript/app.js"></script> 
+
+
+<div class="form_container">
+    <div class="input-box"> 
+        <style > 
+            select {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid #88BAC8;
+                border-radius: 40px;
+                font-size: 16px;
+                color: #fff;
+                padding: 20px 45px 20px 20px;
+            }
+        </style>
+
+        <div class="form_wrapper"> 
+            <h1>Babies</h1>  
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}            
+            <button class="btn" type="submit">Submit Info</button> 
+        </form>  
+        </div>
+    </div>
+</div>
+
+   <!-- Footer  Section -->
+   <div class="footer__container">
+    <div class="footer__links">
+        <div class="footer__link--wrapper">
+
+            <div class="footer__link--items">
+                <h2>About Us</h2>
+                    <a href="#services">Home</a> 
+                    <a href="#services">FAQs</a>
+            </div>
+
+            <div class="footer__link--items">
+                <h2>Contact Us</h2>
+                    <a href="mailto:karen@gmail.com">Email</a> 
+                    <a href="#">+256778909040</a>
+            </div>
+
+                                
+                
+             <section class="social__media">
+                <div class="footer__link--items">
+                    <div class="social__icons">
+                        <a href="#" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social__icon--link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social__icon--link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </section>                    
+        </div>
+
+    </div>
+
+    <div>
+        <p class="website__rights">© DAYSTAR 2024. All rights reserved. Built by Karen Natozo Wamasali.</p>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
